@@ -16,6 +16,12 @@ export default function SlotMachine() {
     getRandomSymbol(),
     getRandomSymbol(),
     getRandomSymbol(),
+    getRandomSymbol(),
+    getRandomSymbol(),
+    getRandomSymbol(),
+    getRandomSymbol(),
+    getRandomSymbol(),
+    getRandomSymbol(),
   ]);
   const [spinning, setSpinning] = useState(false);
   const [result, setResult] = useState<string | null>(null);
@@ -24,7 +30,17 @@ export default function SlotMachine() {
     if (spinning) return;
     setSpinning(true);
     setResult(null);
-    const newReels = [getRandomSymbol(), getRandomSymbol(), getRandomSymbol()];
+    const newReels = [
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+      getRandomSymbol(),
+    ];
     setReels(newReels);
     setTimeout(() => {
       setSpinning(false);
@@ -39,7 +55,7 @@ export default function SlotMachine() {
         <h2 className="text-xl font-semibold">Kitty Slot Machine</h2>
       </CardHeader>
       <CardContent className="flex flex-col items-center gap-4">
-        <div className="flex space-x-2 text-4xl">
+        <div className="grid grid-cols-3 gap-2 text-4xl">
           {reels.map((s, i) => (
             <span key={i}>{s}</span>
           ))}
